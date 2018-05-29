@@ -1,0 +1,22 @@
+<div class="card">
+        <!--<img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar" style="width:100%">-->
+        <div class="albContainer">        
+          <div class="albumTitle">{{album.title}}
+
+            <!--<input type="checkbox" name="tc" ([ngModel])="rememberMe" >-->
+          </div>
+  <!--<p>
+    <input type="checkbox" id="chk_{{album.id}}" checked="checked" />
+    <label for="chk_{{album.id}}">Yellow</label>
+  </p>-->
+
+   <p>
+    <input type="checkbox"   id="chk_{{album.id}}" (change)="chkChanged($event,album.id)" [checked]="isChecked" data-albumId="" />
+    <label for="chk_{{album.id}}">Yellow</label>
+  </p>
+
+
+
+  <!--<input type="checkbox" id="rememberMe" name="rememberMe" [(ngModel)]="rememberMe">-->
+        </div>
+  </div>

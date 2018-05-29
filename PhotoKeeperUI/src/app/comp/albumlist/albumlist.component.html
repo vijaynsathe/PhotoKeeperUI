@@ -1,0 +1,13 @@
+<p>
+  albumlist works!
+</p>
+
+<div class="albumRow ">
+     <app-album-details (testCheck)="testCheck($event)" [album]="albumObj" (albumSelected)="albumSelected($event)"  *ngFor="let albumObj of selectedAblumList"></app-album-details>
+</div>
+<div style="clear:both;"></div>
+<div><button type="button" (click)="showPhoto()" class="btn btn-info">Show photos</button></div>
+<div style="clear:both;"></div>
+<div class="photoviewer">
+ <app-photo-viewer [albumsToShow]="albumsToShow"></app-photo-viewer>
+</div>

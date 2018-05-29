@@ -1,0 +1,21 @@
+<h1>Photoviewer works</h1>
+
+<div class="phViewer">
+    <div class="selectedAlbums">
+        <div class="albumTitle">album-1</div>
+        <div class="albumTitle">album-2</div>
+    </div>
+    <div class="pictureSlider">
+        <div id="slider1" class="slider">
+            <img *ngFor="let pic of photoAlbum.photos" src="{{pic.thumbnailUrl}}" alt="test">
+            <div class="slider1">
+
+                <h3>{{visiblePhotoAlbum.album.title}}</h3>
+                <img *ngFor="let pic of visiblePhotoAlbum.photos" src="{{pic.thumbnailUrl}}" alt="pic.title">
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

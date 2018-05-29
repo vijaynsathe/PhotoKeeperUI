@@ -1,0 +1,17 @@
+.albumTitle{
+    width:50%;
+    float: left;
+    background-color: orange;
+   
+}
+.pictureSlider{
+    width:100%;
+    height: 500px;
+    background: lightgray;
+    overflow-y: scroll;
+}
+
+.slider img{
+    float:left;    
+     margin: 10px;
+}
