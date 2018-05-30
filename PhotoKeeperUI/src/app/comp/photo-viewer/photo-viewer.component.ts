@@ -62,10 +62,6 @@ export class PhotoViewerComponent implements OnInit {
         }
 
       }
-
-
-      //  this.selectedAblumList = this.albumList.filter(record => record.userId === this.selectedUserId);
-
     }).catch(error => {
 
       console.log(error);
