@@ -16,14 +16,12 @@ export class UserListComponent implements OnInit {
   constructor(private _userService: UserService, private comService: CommunicatorService) { }
 
   ngOnInit() {
-    debugger;
     this._userService.getAll().then(data => {
-      debugger;
+      
       this.userList = data as Array<User>;      
       this.filteredUserList = this.userList.map(x => Object.assign({}, x));
 
     }).catch(error => {
-      debugger;
       console.log(error);
     });
   }
@@ -33,18 +31,16 @@ export class UserListComponent implements OnInit {
     this.comService.sendMessage(message);
   }
   UserSelected(userObj) {
-    this.comService.sendMessage(userObj);
-    
+    this.comService.sendMessage(userObj);    
   }
   onTxtUserChange($event){
-    debugger;
+    let searchKey:string = $event.target.value;
+    searchKey = searchKey.toLocaleLowerCase();
     console.log($event)
     if($event.target.value.trim().length ==0){
       this.filteredUserList = this.userList.map(x => Object.assign({}, x));
     }else{
-          this.filteredUserList = this.userList.filter(usr=>usr.name.indexOf($event.target.value) !=-1); 
-    }
-      
-  }
-  
+          this.filteredUserList = this.userList.filter(usr=>usr.name.toLocaleLowerCase().indexOf(searchKey) !=-1); 
+    }      
+  }  
 }

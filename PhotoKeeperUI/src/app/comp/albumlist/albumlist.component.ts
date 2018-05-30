@@ -27,7 +27,7 @@ export class AlbumlistComponent implements OnInit {
   ngOnInit() {
 
     this.subscription = this.commService.getMessage().subscribe(message => {
-      debugger;
+      
       this.selectedUser = message.text;
       this.selectedUserId = this.selectedUser.id;
       //refresh data

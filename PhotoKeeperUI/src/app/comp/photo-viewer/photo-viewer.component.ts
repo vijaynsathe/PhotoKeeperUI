@@ -28,7 +28,6 @@ export class PhotoViewerComponent implements OnInit {
 
   }
   ngOnChanges(changes: SimpleChanges) {
-    debugger;
     console.log(changes);
     this.bindPhoto();
 
@@ -36,12 +35,11 @@ export class PhotoViewerComponent implements OnInit {
   bindPhoto() {
     
     this._photoManagerService.getAll().then(data => {
-      debugger;
       this.allPhotos = data as Array<Photo>;
       console.log(this.allPhotos);
 
       this.photoAlbum.length = 0;
-      debugger;
+      
       if (this.albumsToShow != undefined) {
         for (let item of this.albumsToShow) {
           console.log(item);
@@ -50,7 +48,6 @@ export class PhotoViewerComponent implements OnInit {
           obj.photos = this.allPhotos.filter(rec => rec.albumId == item.id);
           this.photoAlbum.push(obj)
         }
-        debugger;
         console.log(this.photoAlbum);
         this.visiblePhotoAlbum = this.photoAlbum[0];
 
