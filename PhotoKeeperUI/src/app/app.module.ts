@@ -13,7 +13,6 @@ import { PhotoViewerComponent } from './comp/photo-viewer/photo-viewer.component
 import { UserphotosComponent } from "./comp/userphotos/userphotos.component";
 import { AlbumlistComponent } from './comp/albumlist/albumlist.component';
 import { CommunicatorService } from "src/app/services/communicator.service";
-import { CheckboxComponent } from './comp/checkbox/checkbox.component';
 import { PhotoManagerService } from "src/app/services/photo-manager.service";
 
 
@@ -41,8 +40,7 @@ path:'up',
     PhotoDetialsComponent,
     PhotoViewerComponent,
     UserphotosComponent,
-    AlbumlistComponent,
-    CheckboxComponent
+    AlbumlistComponent    
   ],
   imports: [
     BrowserModule,  

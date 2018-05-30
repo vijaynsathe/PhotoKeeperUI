@@ -6,9 +6,9 @@
         <div class="albumTitle">album-2</div>
     </div>
     <div class="pictureSlider">
-        <div id="slider1" class="slider">
+        <div id="slider1" class="slider" *ngIf="visiblePhotoAlbum !=undefined">
             <img *ngFor="let pic of photoAlbum.photos" src="{{pic.thumbnailUrl}}" alt="test">
-            <div class="slider1">
+            <div class="slider1" *ngIf="photoAlbum !=undefined || visiblePhotoAlbum.photos !=undefined">
 
                 <h3>{{visiblePhotoAlbum.album.title}}</h3>
                 <img *ngFor="let pic of visiblePhotoAlbum.photos" src="{{pic.thumbnailUrl}}" alt="pic.title">

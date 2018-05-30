@@ -14,7 +14,9 @@ export class UserListComponent implements OnInit {
   constructor(private _userService: UserService, private comService: CommunicatorService) { }
 
   ngOnInit() {
+    debugger;
     this._userService.getAll().then(data => {
+      debugger;
       this.userList = data as Array<User>;
     }).catch(error => {
       debugger;

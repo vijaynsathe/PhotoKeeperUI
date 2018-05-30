@@ -1,9 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("https://bootswatch.com/flatly/bootstrap.min.css");
-
 body {
-  padding-top: 50px;
+    background: #f1f4f7;
+    padding-top: 60px;
+    font-size: 14px;
+    color: #444444;
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+/*body {
+  padding-top: 50px;
+}*/
 footer {
   padding-left: 15px;
   padding-right: 15px;
@@ -42,4 +48,5 @@ footer {
 #sidebar {
     padding:15px;
     margin-top:10px;
+    background: #fff;
 }
