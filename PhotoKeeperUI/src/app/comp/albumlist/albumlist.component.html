@@ -1,7 +1,11 @@
-<div class="panel panel-default articles">
+<div class="panel panel-default articles" *ngIf="selectedUser !=undefined; else userNotSelectedBlock">
   <div class="panel-heading">
-    <h3> <span class="glyphicon glyphicon-user"></span> John Right
+    <h3 *ngIf="selectedUser != undefined"> <span class="glyphicon glyphicon-user"></span> 
+    <span > {{selectedUser.name}}</span>
       <span class="glyphicon glyphicon-th-large pull-right clickable panel-toggle panel-button-tab-left">Albums</span>
+    </h3>
+    <h3>
+
     </h3>
     <!--<span class="pull-right clickable panel-toggle panel-button-tab-left"><em class="fa fa-toggle-up"></em></span>-->
   </div>
@@ -10,9 +14,15 @@
     <app-album-details (testCheck)="testCheck($event)" [album]="albumObj" (albumSelected)="albumSelected($event)" *ngFor="let albumObj of selectedAblumList"></app-album-details>
   </div>
   <div style="clear:both;"></div>
-  <div><button type="button" (click)="showPhoto()" class="btn btn-info">Show photos</button></div>
+  <div><button type="button" (click)="showPhoto()" class="btn button">Show photos</button></div>
   <div style="clear:both;"></div>
   <div class="photoviewer">
     <app-photo-viewer [albumsToShow]="albumsToShow"></app-photo-viewer>
   </div>
 </div>
+
+<ng-template #userNotSelectedBlock>
+ <div>
+  <h1>Select user from left navigation</h1>
+</div>
+</ng-template>

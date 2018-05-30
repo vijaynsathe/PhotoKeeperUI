@@ -3,6 +3,7 @@ import { AlbumManagerService } from "src/app/services/album-manager.service";
 import { Album, AlbumSelection } from "src/app/model/album";
 import { Subscription } from "rxjs";
 import { CommunicatorService } from "src/app/services/communicator.service";
+import { User } from "src/app/model/user";
 
 
 @Component({
@@ -11,6 +12,7 @@ import { CommunicatorService } from "src/app/services/communicator.service";
   styleUrls: ['./albumlist.component.css']
 })
 export class AlbumlistComponent implements OnInit {
+  selectedUser:User;
   selectedUserId: number = 1;
   albumList: Album[];
   selectedAblumList: Album[];
@@ -26,7 +28,8 @@ export class AlbumlistComponent implements OnInit {
 
     this.subscription = this.commService.getMessage().subscribe(message => {
       debugger;
-      this.selectedUserId = message.text;
+      this.selectedUser = message.text;
+      this.selectedUserId = this.selectedUser.id;
       //refresh data
       this.bindAlbums();
 
@@ -46,29 +49,16 @@ export class AlbumlistComponent implements OnInit {
 
     this.selectedAblumList = this.albumList.filter(record => record.userId === this.selectedUserId);
   }
-  // albumSelected(selectedAlbum: AlbumSelection) {
-  //   debugger;
-  //   console.log(selectedAlbum);
-
-  //   if (selectedAlbum.selected) {
-  //     if (this.albumSelectionCounter >= 2) {
-  //       alert(">2");
-  //     } else {
-  //       this.albumSelectionCounter++;
-  //     }
-  //   } else {
-  //     this.albumSelectionCounter--;
-  //   }
-  // }
+ 
 testCheck(event){
 
   console.log(event);
 }
     albumSelected(event) {
         if (event.target.target.checked) {
-      if (this.albumSelectionCounter >= 2) {
-     
+      if (this.albumSelectionCounter >= 2) {     
         event.target.target.checked = false;
+     alert("Only 2 albums can be selected at a time!");
       } else {
         this.userSelectedAlbumId.push(event.album);
         this.albumSelectionCounter++;

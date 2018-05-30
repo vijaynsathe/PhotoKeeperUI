@@ -1,7 +1,13 @@
+<form role="search" action="">
+			<div class="form-group">
+				<input type="text" [(value)]="txtUserSearchKey" class="form-control" placeholder="Search User" (keypress)="onTxtUserChange($event)" (change)="onTxtUserChange($event)" (keyup)="onTxtUserChange($event)">
+        
+			</div>
+		</form>
 <div class="sidebar-nav">
         <ul class="nav">
-          <li *ngFor="let userObj of userList"><a href="#" (click)="UserSelected(userObj.id)"><app-user-details [user]="userObj"></app-user-details></a></li>                    
-          <li><a href="#">LInks</a></li>
+          <li *ngFor="let userObj of filteredUserList"><a href="#" (click)="UserSelected(userObj)"><span class="glyphicon glyphicon-user"></span> <app-user-details [user]="userObj"></app-user-details></a></li>                    
+        
         
         </ul>
 </div>

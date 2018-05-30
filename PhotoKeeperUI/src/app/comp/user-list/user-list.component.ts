@@ -10,6 +10,8 @@ import { CommunicatorService } from "src/app/services/communicator.service";
 })
 export class UserListComponent implements OnInit {
   userList: User[];
+  filteredUserList: User[];
+  txtUserSearchKey:string="";
 
   constructor(private _userService: UserService, private comService: CommunicatorService) { }
 
@@ -17,7 +19,9 @@ export class UserListComponent implements OnInit {
     debugger;
     this._userService.getAll().then(data => {
       debugger;
-      this.userList = data as Array<User>;
+      this.userList = data as Array<User>;      
+      this.filteredUserList = this.userList.map(x => Object.assign({}, x));
+
     }).catch(error => {
       debugger;
       console.log(error);
@@ -28,8 +32,19 @@ export class UserListComponent implements OnInit {
     // send message to subscribers via observable subject
     this.comService.sendMessage(message);
   }
-  UserSelected(id) {
-    this.comService.sendMessage(id);
+  UserSelected(userObj) {
+    this.comService.sendMessage(userObj);
     
   }
+  onTxtUserChange($event){
+    debugger;
+    console.log($event)
+    if($event.target.value.trim().length ==0){
+      this.filteredUserList = this.userList.map(x => Object.assign({}, x));
+    }else{
+          this.filteredUserList = this.userList.filter(usr=>usr.name.indexOf($event.target.value) !=-1); 
+    }
+      
+  }
+  
 }

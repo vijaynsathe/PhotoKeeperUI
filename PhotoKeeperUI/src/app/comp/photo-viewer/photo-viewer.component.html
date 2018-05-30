@@ -1,16 +1,17 @@
-<h1>Photoviewer works</h1>
 
-<div class="phViewer">
-    <div class="selectedAlbums">
-        <div class="albumTitle">album-1</div>
-        <div class="albumTitle">album-2</div>
-    </div>
+<div class="panel panel-default articles" style="margin-top:10px;">
+  <div class="panel-heading">
+   Album Photos
+  </div>
+
+  <div class="phViewer">
+
     <div class="pictureSlider">
         <div id="slider1" class="slider" *ngIf="visiblePhotoAlbum !=undefined">
             <img *ngFor="let pic of photoAlbum.photos" src="{{pic.thumbnailUrl}}" alt="test">
             <div class="slider1" *ngIf="photoAlbum !=undefined || visiblePhotoAlbum.photos !=undefined">
 
-                <h3>{{visiblePhotoAlbum.album.title}}</h3>
+                <h3 style="margin-left:10px;">{{visiblePhotoAlbum.album.title}}</h3>
                 <img *ngFor="let pic of visiblePhotoAlbum.photos" src="{{pic.thumbnailUrl}}" alt="pic.title">
             </div>
 
@@ -19,3 +20,6 @@
     </div>
 
 </div>
+
+</div>    
+

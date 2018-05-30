@@ -5,7 +5,7 @@ import { Observable, Subject, pipe } from 'rxjs';
 export class CommunicatorService {
     private subject = new Subject<any>();
  
-    sendMessage(message: string) {
+    sendMessage(message: any) {
         this.subject.next({ text: message });
     }
  

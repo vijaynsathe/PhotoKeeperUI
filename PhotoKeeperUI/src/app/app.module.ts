@@ -14,6 +14,7 @@ import { UserphotosComponent } from "./comp/userphotos/userphotos.component";
 import { AlbumlistComponent } from './comp/albumlist/albumlist.component';
 import { CommunicatorService } from "src/app/services/communicator.service";
 import { PhotoManagerService } from "src/app/services/photo-manager.service";
+import { FilterPipe } from './pipes/filter.pipe';
 
 
 const routes = [
@@ -40,7 +41,8 @@ path:'up',
     PhotoDetialsComponent,
     PhotoViewerComponent,
     UserphotosComponent,
-    AlbumlistComponent    
+    AlbumlistComponent,
+    FilterPipe    
   ],
   imports: [
     BrowserModule,  

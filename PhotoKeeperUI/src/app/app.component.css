@@ -1,3 +1,28 @@
 .navbar-header .navbar-brand span {
     color: #30a5ff;
 }
+
+
+
+
+.sidebar {
+    display: block;
+    position: fixed;
+    top: 60px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.sidebar {
+    display: block;
+    padding: 0;
+    display: none;
+    box-shadow: none;
+    background: #fff;
+}

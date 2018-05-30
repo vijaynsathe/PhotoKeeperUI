@@ -15,3 +15,7 @@ name:string;
 email:string;
 address:Address;
 }
+
+export class AppSettings{
+albumDisplayDuration:number=20;
+}

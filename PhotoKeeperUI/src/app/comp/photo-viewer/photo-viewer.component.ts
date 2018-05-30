@@ -26,21 +26,12 @@ export class PhotoViewerComponent implements OnInit {
 
   ngOnInit() {
 
-    // this.refreshData();
-    // this.interval = setInterval(() => {
-    //   this.refreshData();
-    // }, 2000);
-    // this.bindPhoto();
   }
   ngOnChanges(changes: SimpleChanges) {
     debugger;
     console.log(changes);
     this.bindPhoto();
-    //changes.albumsToShow.currentValue
-    // const name: SimpleChange = changes.name;
-    // console.log('prev value: ', name.previousValue);
-    // console.log('got name: ', name.currentValue);
-    // this._name = name.currentValue.toUpperCase();
+
   }
   bindPhoto() {
     
@@ -67,7 +58,7 @@ export class PhotoViewerComponent implements OnInit {
         if (this.photoAlbum.length >= 2) {
           this.interval = setInterval(() => {
             this.refreshData();
-          }, 3000);
+          }, 20000);
         }
 
       }
